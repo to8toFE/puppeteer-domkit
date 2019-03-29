@@ -1,6 +1,6 @@
 // const utils = require('@/utils')
 import 'colors'
-import puppeteer, { Page, Browser } from 'puppeteer'
+import puppeteer from 'puppeteer'
 
 import $ from '@/index'
 
@@ -11,16 +11,17 @@ import $Selector from './$Selector'
 import $SelectorExpect from './$Selector.expect'
 import $SelectorWaitFor from './$Selector.waitFor'
 
-describe('ppt$', () => {
+
+
+describe('puppeteer-domkit', () => {
     before(async () => {
-        let browser: Browser
-        let page: Page
-        browser = await puppeteer.launch({
+        
+        let browser = await puppeteer.launch({
             headless: false
             //devtools: true
         })
 
-        page = (await browser.pages())[0]
+        let page = (await browser.pages())[0]
 
         await $.setBrowser(browser)
 

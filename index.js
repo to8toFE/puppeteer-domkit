@@ -13,10 +13,8 @@ const closeTarget = require('./src/utils/closeTarget')
 
 const constants = require('./src/constants')
 
-global.browser = null
-global.page = null
-let browser
-let page
+browser = null
+page = null
 // 没参数
 const props0 = [
     'text',
@@ -64,7 +62,7 @@ Domkit.constants = constants
  * 设置浏览器，默认将第一个启动的空白页面作为全局Page
  */
 Domkit.setBrowser = async (b) => {
-    global.browser = Domkit.browser = browser = b
+    browser = Domkit.browser = b
 
     Domkit.setCurrentPage((await browser.pages())[0])
 
@@ -99,7 +97,7 @@ function initPage(p) {
  * 设置需要被控制的页面
  */
 Domkit.setCurrentPage = async (p) => {
-    global.page = Domkit.page = page = p
+    page = Domkit.page = p
 }
 
 Domkit.findTarget = findTarget
@@ -174,7 +172,7 @@ class $Selector {
             waitFors[item] = async (value, options) => {
                 await waitFor(
                     async () => {
-                        return equat(await $(this.selectors)[item](), value)
+                        return equat(await Domkit(this.selectors)[item](), value)
                     },
                     options,
                     `waiting for ${converToString(
@@ -188,7 +186,7 @@ class $Selector {
             waitFors[item] = async (name, value, options) => {
                 await waitFor(
                     async () => {
-                        return equat(await $(this.selectors)[item](name), value)
+                        return equat(await Domkit(this.selectors)[item](name), value)
                     },
                     options,
                     `waiting for ${converToString(
@@ -224,7 +222,7 @@ class $Selector {
 
         props0.forEach((item) => {
             expects[item] = async (value) => {
-                if (!equat(await $(this.selectors)[item](), value)) {
+                if (!equat(await Domkit(this.selectors)[item](), value)) {
                     throw new ExpectError(
                         `expect ${converToString(
                             this.selectors
@@ -236,7 +234,7 @@ class $Selector {
 
         props1.forEach((item) => {
             expects[item] = async (name, value) => {
-                if (!equat(await $(this.selectors)[item](name), value)) {
+                if (!equat(await Domkit(this.selectors)[item](name), value)) {
                     throw new ExpectError(
                         `expect ${converToString(
                             this.selectors
