@@ -17,7 +17,7 @@
         },
         "baseUrl": ".",
         "types": ["node", "mocha"],
-        "typeRoots": ["../node_modules/@types", "./typings"],
+        "typeRoots": ["node_modules/@types", "types"],
         "lib": ["esnext", "es2015", "dom", "dom.iterable", "scripthost"]
     },
     "include": ["./**/*.ts"]

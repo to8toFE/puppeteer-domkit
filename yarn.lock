@@ -28,6 +28,10 @@
   dependencies:
     "@types/node" "*"
 
+"@types/zepto@^1.0.30":
+  version "1.0.30"
+  resolved "https://registry.npmjs.org/@types/zepto/-/zepto-1.0.30.tgz#067613ca8c1b61ce464125d3d92df9dba08368d8"
+
 agent-base@^4.1.0:
   version "4.2.1"
   resolved "https://registry.npmjs.org/agent-base/-/agent-base-4.2.1.tgz#d89e5999f797875674c07d87f260fc41e83e8ca9"
@@ -345,6 +349,85 @@ progress@^2.0.1:
 proxy-from-env@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.0.0.tgz#33c50398f70ea7eb96d21f7b817630a55791c7ee"
+
+puppeteer-domkit@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.0.tgz#a64cd09ba76d9ada803dde07281a53362cc22838"
+  dependencies:
+    colors "^1.3.3"
+    puppeteer "^1.14.0"
+    tslib "^1.9.3"
+    typescript "^3.0.0"
+
+puppeteer-domkit@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.1.tgz#5c7c8066e0d1541000868f17283008d1f75c0030"
+  dependencies:
+    colors "^1.3.3"
+    puppeteer "^1.14.0"
+    puppeteer-domkit "^1.0.0"
+    tslib "^1.9.3"
+    typescript "^3.0.0"
+
+puppeteer-domkit@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.2.tgz#57cbf41a4780ebe6fe0b6ed5f76fb928f31e9ccd"
+  dependencies:
+    colors "^1.3.3"
+    puppeteer "^1.14.0"
+    puppeteer-domkit "^1.0.1"
+    tslib "^1.9.3"
+    typescript "^3.0.0"
+
+puppeteer-domkit@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.3.tgz#a1ef3d9e706b4aa3641a8cfe87e51f3351dafcbd"
+  dependencies:
+    colors "^1.3.3"
+    puppeteer "^1.14.0"
+    puppeteer-domkit "^1.0.2"
+    tslib "^1.9.3"
+    typescript "^3.0.0"
+
+puppeteer-domkit@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.4.tgz#51edc24854116e979f87397a192eb890e34cf28d"
+  dependencies:
+    colors "^1.3.3"
+    puppeteer "^1.14.0"
+    puppeteer-domkit "^1.0.3"
+    tslib "^1.9.3"
+    typescript "^3.0.0"
+
+puppeteer-domkit@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.5.tgz#952b39437587810c7e09cddf72b62b95e8cf170b"
+  dependencies:
+    colors "^1.3.3"
+    puppeteer "^1.14.0"
+    puppeteer-domkit "^1.0.4"
+    tslib "^1.9.3"
+    typescript "^3.0.0"
+
+puppeteer-domkit@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.6.tgz#d632be371564a833af39e2c1e8d8ba442962d8df"
+  dependencies:
+    colors "^1.3.3"
+    puppeteer "^1.14.0"
+    puppeteer-domkit "^1.0.5"
+    tslib "^1.9.3"
+    typescript "^3.0.0"
+
+puppeteer-domkit@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.7.tgz#ac4abda6065299ebf6b9a7eae03f08e63a31a80b"
+  dependencies:
+    colors "^1.3.3"
+    puppeteer "^1.14.0"
+    puppeteer-domkit "^1.0.6"
+    tslib "^1.9.3"
+    typescript "^3.0.0"
 
 puppeteer@^1.14.0:
   version "1.14.0"

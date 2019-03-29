@@ -1,4 +1,4 @@
-declare class $Selector {
+export declare class $Selector {
     waitFor: DomWaitFor
     expect: DomExpect
     input(content: string): Promise<void>
@@ -66,7 +66,7 @@ interface DomWaitFor {
     visible(value: boolean, options?: WaitForOptions): Promise<void>
     exist(value: boolean, options?: WaitForOptions): Promise<void>
 
-    scrollTop(value: number, | Symbol options?: WaitForOptions): Promise<void>
+    scrollTop(value: number | Symbol, options?: WaitForOptions): Promise<void>
 
     css(name: string | Symbol, value: string, options?: WaitForOptions): Promise<void>
     attr(name: string | Symbol, value: string, options?: WaitForOptions): Promise<void>
@@ -109,3 +109,14 @@ interface clickForOptions {
     x: number
     y: number
 }
+
+export declare interface PlainObject {
+    [key: string]: any
+}
+
+export declare interface WaitForOptions {
+    timeout: number
+    delay: number
+}
+
+export default $Selector

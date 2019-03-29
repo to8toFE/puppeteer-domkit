@@ -1,4 +1,4 @@
-const $: $ = require('@/src')
+import $ from '@/index'
 
 export default () => {
     it('$(selector)', async () => {

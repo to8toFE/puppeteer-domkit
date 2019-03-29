@@ -1,17 +1,17 @@
 const path = require('path')
 
-const click = require('./utils/click')
-const clickFor = require('./utils/clickFor')
-const blur = require('./utils/blur')
-const input = require('./utils/input')
+const click = require('./src/utils/click')
+const clickFor = require('./src/utils/clickFor')
+const blur = require('./src/utils/blur')
+const input = require('./src/utils/input')
 
-const exist = require('./utils/exist')
-const visible = require('./utils/visible')
+const exist = require('./src/utils/exist')
+const visible = require('./src/utils/visible')
 
-const findTarget = require('./utils/findTarget')
-const closeTarget = require('./utils/closeTarget')
+const findTarget = require('./src/utils/findTarget')
+const closeTarget = require('./src/utils/closeTarget')
 
-const constants = require('./constants')
+const constants = require('./src/constants')
 
 global.browser = null
 global.page = null
@@ -48,7 +48,7 @@ const selectors = [
     'last'
 ]
 
-function $(selector) {
+function Domkit(selector) {
     if (!selector) {
         throw new Error('[$Z] selector is required')
     }
@@ -58,15 +58,15 @@ function $(selector) {
 /**
  * 常量
  */
-$.constants = constants
+Domkit.constants = constants
 
 /**
  * 设置浏览器，默认将第一个启动的空白页面作为全局Page
  */
-$.setBrowser = async (b) => {
-    global.browser = $.browser = browser = b
+Domkit.setBrowser = async (b) => {
+    global.browser = Domkit.browser = browser = b
 
-    $.setCurrentPage((await browser.pages())[0])
+    Domkit.setCurrentPage((await browser.pages())[0])
 
     initPage()
 
@@ -98,12 +98,12 @@ function initPage(p) {
 /**
  * 设置需要被控制的页面
  */
-$.setCurrentPage = async (p) => {
-    global.page = $.page = page = p
+Domkit.setCurrentPage = async (p) => {
+    global.page = Domkit.page = page = p
 }
 
-$.findTarget = findTarget
-$.closeTarget = closeTarget
+Domkit.findTarget = findTarget
+Domkit.closeTarget = closeTarget
 
 const waitFors = {}
 
@@ -153,9 +153,9 @@ expects.target = async (targetUrlSubstr, opened) => {
     }
 }
 
-defineFreezedProps($, { waitFor: waitFors, expect: expects })
+defineFreezedProps(Domkit, { waitFor: waitFors, expect: expects })
 
-Object.freeze($.waitFor)
+Object.freeze(Domkit.waitFor)
 
 class $Selector {
     constructor(selector) {
@@ -367,8 +367,7 @@ $Selector.prototype.exist = async function() {
     )
 }
 
-module.exports = $
-module.exports.default = $
+module.exports = Domkit
 
 function assignSelectors() {
     const $selector = []

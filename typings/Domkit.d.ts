@@ -1,12 +1,7 @@
+import { $Selector } from './$Selector'
 import { Page, Browser } from 'puppeteer'
-import './$Z'
-import '$Selector'
 
-declare var page: Page
-declare var browser: Browser
-
-
-export interface $ {
+export interface Domkit {
     (selector: string): $Selector
 
     constants: constants
@@ -14,8 +9,11 @@ export interface $ {
     waitFor: $WaitFor
     expect: $Expect
 
+    page: Page
+    browser: Browser
+
     setBrowser(browser: any): Promise<void>
-    setPage(page: any): Promise<void>
+    setCurrentPage(page: any): Promise<void>
 }
 interface $Expect {
     target(urlSubstr: string, opened?: boolean): Promise<void>
@@ -37,11 +35,9 @@ declare interface constants {
     NOT_EMPTY: Symbol
 }
 
-declare interface PlainObject {
-    [key: string]: any
-}
 
-declare interface WaitForOptions {
+interface WaitForOptions {
     timeout: number
     delay: number
 }
+

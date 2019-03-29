@@ -1,4 +1,4 @@
-const $: $ = require('@/src')
+import $ from '@/index'
 
 // 没参数
 const props0 = [

@@ -2,7 +2,7 @@
 import 'colors'
 import puppeteer, { Page, Browser } from 'puppeteer'
 
-import $ from '@/src'
+import $ from '@/index'
 
 import $spec from './$'
 import $expect from './$.expect'
@@ -10,10 +10,11 @@ import $waitFor from './$.waitFor'
 import $Selector from './$Selector'
 import $SelectorExpect from './$Selector.expect'
 import $SelectorWaitFor from './$Selector.waitFor'
-let browser: Browser
-let page: Page
+
 describe('ppt$', () => {
     before(async () => {
+        let browser: Browser
+        let page: Page
         browser = await puppeteer.launch({
             headless: false
             //devtools: true
@@ -41,7 +42,7 @@ describe('ppt$', () => {
         await page.waitFor(1000)
     })
     after(() => {
-        browser.close()
+        $.browser.close()
     })
     describe('$', $spec)
     describe('$.expect', $expect)
