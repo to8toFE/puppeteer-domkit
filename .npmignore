@@ -1,0 +1,6 @@
+test
+node_modules
+register.js
+tsconfig.json
+yarn.lock
+yarn-error.log

@@ -1,0 +1,111 @@
+declare class $Selector {
+    waitFor: DomWaitFor
+    expect: DomExpect
+    input(content: string): Promise<void>
+    type(content: string): Promise<void>
+    click(options?: PlainObject): Promise<void>
+    clickFor(options?: clickForOptions): Promise<void>
+    focus(): Promise<void>
+    blur(): Promise<void>
+
+    text(): Promise<string>
+    html(): Promise<string>
+    height(): Promise<number>
+    width(): Promise<number>
+    val(): Promise<string>
+    index(): Promise<number>
+    offset(): Promise<{
+        top: number
+        left: number
+        width: number
+        heigh: number
+    }>
+    offsetParent(): Promise<{
+        top: number
+        left: number
+        width: number
+        heigh: number
+    }>
+    position(): Promise<{ top: number; left: number }>
+    scrollTop(): Promise<number>
+
+    visible(): Promise<boolean>
+    exist(): Promise<boolean>
+
+    css(name: string ): Promise<string>
+    attr(attrname: string): Promise<any>
+    prop(name: string): Promise<any>
+    data(name: string): Promise<any>
+    is(selector: string): Promise<boolean>
+    hasClass(name: string): Promise<boolean>
+
+    has(selector?: string): $Selector
+    not(selector?: string): $Selector
+    parents(selector?: string): $Selector
+    parent(selector?: string): $Selector
+    children(selector?: string): $Selector
+    siblings(selector?: string): $Selector
+    prev(selector?: string): $Selector
+    next(selector?: string): $Selector
+    find(selector: string): $Selector
+    eq(index: number): $Selector
+
+    first(): $Selector
+    last(): $Selector
+}
+
+// offsetLeft offsetTop
+interface DomWaitFor {
+    text(value: string | Symbol, options?: WaitForOptions): Promise<void>
+    html(value: string | Symbol, options?: WaitForOptions): Promise<void>
+    height(value: string | Symbol, options?: WaitForOptions): Promise<void>
+    width(value: number | Symbol, options?: WaitForOptions): Promise<void>
+    val(value: string | Symbol, options?: WaitForOptions): Promise<void>
+    index(value: number | Symbol, options?: WaitForOptions): Promise<void>
+
+    visible(value: boolean, options?: WaitForOptions): Promise<void>
+    exist(value: boolean, options?: WaitForOptions): Promise<void>
+
+    scrollTop(value: number, | Symbol options?: WaitForOptions): Promise<void>
+
+    css(name: string | Symbol, value: string, options?: WaitForOptions): Promise<void>
+    attr(name: string | Symbol, value: string, options?: WaitForOptions): Promise<void>
+    prop(name: string | Symbol, value: string, options?: WaitForOptions): Promise<void>
+    data(name: string | Symbol, value: string, options?: WaitForOptions): Promise<void>
+    is(
+        selector: string,
+        value: boolean,
+        options?: WaitForOptions
+    ): Promise<void>
+
+    hasClass(name: string, value: boolean): Promise<void>
+}
+interface DomExpect {
+    text(value: string | Symbol): Promise<void>
+    html(value: string | Symbol): Promise<void>
+    height(value: string | Symbol): Promise<void>
+    width(value: number | Symbol): Promise<void>
+    val(value: string | Symbol): Promise<void>
+    index(value: number | Symbol): Promise<void>
+
+    visible(value: boolean): Promise<void>
+    exist(value: boolean): Promise<void>
+
+    scrollTop(value: number | Symbol): Promise<void>
+
+    css(name: string | Symbol, value: string): Promise<void>
+    attr(name: string | Symbol, value: string): Promise<void>
+    prop(name: string | Symbol, value: string): Promise<void>
+    data(name: string | Symbol, value: string): Promise<void>
+    is(selector: string | Symbol, value: boolean): Promise<void>
+
+    hasClass(name: string | Symbol, value: boolean): Promise<void>
+}
+
+interface clickForOptions {
+    timeout: number
+    timespan: number
+    delay: number
+    x: number
+    y: number
+}

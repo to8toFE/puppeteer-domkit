@@ -1,0 +1,65 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  10.15.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.npmjs.org/tslib: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:138095:19)
+      at Object.onceWrapper (events.js:277:13)
+      at ClientRequest.emit (events.js:189:13)
+      at TLSSocket.emitRequestTimeout (_http_client.js:662:40)
+      at Object.onceWrapper (events.js:277:13)
+      at TLSSocket.emit (events.js:189:13)
+      at TLSSocket.Socket._onTimeout (net.js:440:8)
+      at ontimeout (timers.js:436:11)
+      at tryOnTimeout (timers.js:300:5)
+      at listOnTimeout (timers.js:263:5)
+
+npm manifest: 
+  {
+    "name": "puppeteer-domkit",
+    "version": "1.0.0",
+    "description": "const value = await $(\"ul>li:visible\").eq(1).val() -- A toolkit for puppeteer in nodejs environment, make you write less do more",
+    "main": "index.js",
+    "scripts": {
+      "test": "mocha -r test/register.js test/**/index.ts --watch --watch-extensions ts,json --recursive --full-trace --timeout 10000",
+      "test-dev": "mocha -r test/register.js test/**/index.ts --watch --watch-extensions ts,json --recursive --inspect --full-trace --bail --debug --async-only --timeout 10000"
+    },
+    "author": "stevenjc",
+    "license": "ISC",
+    "dependencies": {
+      "tslib": "^1.9.3",
+      "typescript": "^3.0.0"
+  },
+  "devDependencies": {
+      "@types/chai": "^4.1.7",
+      "@types/mocha": "^5.2.6",
+      "@types/node": "^10.11.4",
+      "@types/puppeteer": "^1.12.3",
+      "chai": "^4.2.0",
+      "fs-extra": "^7.0.1",
+      "mocha": "^5.2.0",
+      "mocha-parallel-tests": "^2.0.6-alpha.3",
+      "mochawesome": "^3.1.1",
+      "ts-mocha": "^6.0.0",
+      "ts-node": "^8.0.2",
+      "tsconfig-paths": "^3.8.0"
+  }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

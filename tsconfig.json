@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "strict": false,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "importHelpers": false,
+        "noUnusedLocals": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true,
+        "paths": {
+            "@/*": ["./*"]
+        },
+        "baseUrl": ".",
+        "types": ["node", "mocha"],
+        "typeRoots": ["../node_modules/@types", "./typings"],
+        "lib": ["esnext", "es2015", "dom", "dom.iterable", "scripthost"]
+    },
+    "include": ["./**/*.ts"]
+}
