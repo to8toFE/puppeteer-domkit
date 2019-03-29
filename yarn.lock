@@ -28,13 +28,9 @@
   dependencies:
     "@types/node" "*"
 
-"@types/zepto@^1.0.30":
-  version "1.0.30"
-  resolved "https://registry.npmjs.org/@types/zepto/-/zepto-1.0.30.tgz#067613ca8c1b61ce464125d3d92df9dba08368d8"
-
 agent-base@^4.1.0:
   version "4.2.1"
-  resolved "https://registry.npmjs.org/agent-base/-/agent-base-4.2.1.tgz#d89e5999f797875674c07d87f260fc41e83e8ca9"
+  resolved "http://registry.npm.taobao.org/agent-base/download/agent-base-4.2.1.tgz#d89e5999f797875674c07d87f260fc41e83e8ca9"
   dependencies:
     es6-promisify "^5.0.0"
 
@@ -52,7 +48,7 @@ assertion-error@^1.1.0:
 
 async-limiter@~1.0.0:
   version "1.0.0"
-  resolved "https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.0.tgz#78faed8c3d074ab81f22b4e985d79e8738f720f8"
+  resolved "http://registry.npm.taobao.org/async-limiter/download/async-limiter-1.0.0.tgz#78faed8c3d074ab81f22b4e985d79e8738f720f8"
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -102,7 +98,7 @@ concat-map@0.0.1:
 
 concat-stream@1.6.2:
   version "1.6.2"
-  resolved "https://registry.npmjs.org/concat-stream/-/concat-stream-1.6.2.tgz#904bdf194cd3122fc675c77fc4ac3d4ff0fd1a34"
+  resolved "http://registry.npm.taobao.org/concat-stream/download/concat-stream-1.6.2.tgz#904bdf194cd3122fc675c77fc4ac3d4ff0fd1a34"
   dependencies:
     buffer-from "^1.0.0"
     inherits "^2.0.3"
@@ -111,11 +107,11 @@ concat-stream@1.6.2:
 
 core-util-is@~1.0.0:
   version "1.0.2"
-  resolved "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
+  resolved "http://registry.npm.taobao.org/core-util-is/download/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
 debug@2.6.9:
   version "2.6.9"
-  resolved "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
+  resolved "http://registry.npm.taobao.org/debug/download/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
     ms "2.0.0"
 
@@ -127,13 +123,13 @@ debug@3.1.0:
 
 debug@^3.1.0:
   version "3.2.6"
-  resolved "https://registry.npmjs.org/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
+  resolved "http://registry.npm.taobao.org/debug/download/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
   dependencies:
     ms "^2.1.1"
 
 debug@^4.1.0:
   version "4.1.1"
-  resolved "https://registry.npmjs.org/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
+  resolved "http://registry.npm.taobao.org/debug/download/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
   dependencies:
     ms "^2.1.1"
 
@@ -153,11 +149,11 @@ diff@3.5.0, diff@^3.1.0:
 
 es6-promise@^4.0.3:
   version "4.2.6"
-  resolved "https://registry.npmjs.org/es6-promise/-/es6-promise-4.2.6.tgz#b685edd8258886365ea62b57d30de28fadcd974f"
+  resolved "http://registry.npm.taobao.org/es6-promise/download/es6-promise-4.2.6.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fes6-promise%2Fdownload%2Fes6-promise-4.2.6.tgz#b685edd8258886365ea62b57d30de28fadcd974f"
 
 es6-promisify@^5.0.0:
   version "5.0.0"
-  resolved "https://registry.npmjs.org/es6-promisify/-/es6-promisify-5.0.0.tgz#5109d62f3e56ea967c4b63505aef08291c8a5203"
+  resolved "http://registry.npm.taobao.org/es6-promisify/download/es6-promisify-5.0.0.tgz#5109d62f3e56ea967c4b63505aef08291c8a5203"
   dependencies:
     es6-promise "^4.0.3"
 
@@ -167,7 +163,7 @@ escape-string-regexp@1.0.5:
 
 extract-zip@^1.6.6:
   version "1.6.7"
-  resolved "https://registry.npmjs.org/extract-zip/-/extract-zip-1.6.7.tgz#a840b4b8af6403264c8db57f4f1a74333ef81fe9"
+  resolved "http://registry.npm.taobao.org/extract-zip/download/extract-zip-1.6.7.tgz#a840b4b8af6403264c8db57f4f1a74333ef81fe9"
   dependencies:
     concat-stream "1.6.2"
     debug "2.6.9"
@@ -176,7 +172,7 @@ extract-zip@^1.6.6:
 
 fd-slicer@~1.0.1:
   version "1.0.1"
-  resolved "https://registry.npmjs.org/fd-slicer/-/fd-slicer-1.0.1.tgz#8b5bcbd9ec327c5041bf9ab023fd6750f1177e65"
+  resolved "http://registry.npm.taobao.org/fd-slicer/download/fd-slicer-1.0.1.tgz#8b5bcbd9ec327c5041bf9ab023fd6750f1177e65"
   dependencies:
     pend "~1.2.0"
 
@@ -209,7 +205,7 @@ glob@7.1.2:
 
 glob@^7.1.3:
   version "7.1.3"
-  resolved "https://registry.npmjs.org/glob/-/glob-7.1.3.tgz#3960832d3f1574108342dafd3a67b332c0969df1"
+  resolved "http://registry.npm.taobao.org/glob/download/glob-7.1.3.tgz#3960832d3f1574108342dafd3a67b332c0969df1"
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -236,7 +232,7 @@ he@1.1.1:
 
 https-proxy-agent@^2.2.1:
   version "2.2.1"
-  resolved "https://registry.npmjs.org/https-proxy-agent/-/https-proxy-agent-2.2.1.tgz#51552970fa04d723e04c56d04178c3f92592bbc0"
+  resolved "http://registry.npm.taobao.org/https-proxy-agent/download/https-proxy-agent-2.2.1.tgz#51552970fa04d723e04c56d04178c3f92592bbc0"
   dependencies:
     agent-base "^4.1.0"
     debug "^3.1.0"
@@ -254,7 +250,7 @@ inherits@2, inherits@^2.0.3, inherits@~2.0.3:
 
 isarray@~1.0.0:
   version "1.0.0"
-  resolved "https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
+  resolved "http://registry.npm.taobao.org/isarray/download/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
 
 json5@^1.0.1:
   version "1.0.1"
@@ -274,7 +270,7 @@ make-error@^1.1.1:
 
 mime@^2.0.3:
   version "2.4.0"
-  resolved "https://registry.npmjs.org/mime/-/mime-2.4.0.tgz#e051fd881358585f3279df333fe694da0bcffdd6"
+  resolved "http://registry.npm.taobao.org/mime/download/mime-2.4.0.tgz#e051fd881358585f3279df333fe694da0bcffdd6"
 
 minimatch@3.0.4, minimatch@^3.0.4:
   version "3.0.4"
@@ -318,7 +314,7 @@ ms@2.0.0:
 
 ms@^2.1.1:
   version "2.1.1"
-  resolved "https://registry.npmjs.org/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
+  resolved "http://registry.npm.taobao.org/ms/download/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
 once@^1.3.0:
   version "1.4.0"
@@ -336,102 +332,31 @@ pathval@^1.1.0:
 
 pend@~1.2.0:
   version "1.2.0"
-  resolved "https://registry.npmjs.org/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
+  resolved "http://registry.npm.taobao.org/pend/download/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
 
 process-nextick-args@~2.0.0:
   version "2.0.0"
-  resolved "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
+  resolved "http://registry.npm.taobao.org/process-nextick-args/download/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
 
 progress@^2.0.1:
   version "2.0.3"
-  resolved "https://registry.npmjs.org/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
+  resolved "http://registry.npm.taobao.org/progress/download/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
 
 proxy-from-env@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.0.0.tgz#33c50398f70ea7eb96d21f7b817630a55791c7ee"
+  resolved "http://registry.npm.taobao.org/proxy-from-env/download/proxy-from-env-1.0.0.tgz#33c50398f70ea7eb96d21f7b817630a55791c7ee"
 
-puppeteer-domkit@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.0.tgz#a64cd09ba76d9ada803dde07281a53362cc22838"
+puppeteer-domkit@^1.0.14:
+  version "1.0.14"
+  resolved "http://registry.npm.taobao.org/puppeteer-domkit/download/puppeteer-domkit-1.0.14.tgz#de4aed66de7f2367fca3d2e77a4318e703907a12"
   dependencies:
     colors "^1.3.3"
-    puppeteer "^1.14.0"
-    tslib "^1.9.3"
-    typescript "^3.0.0"
-
-puppeteer-domkit@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.1.tgz#5c7c8066e0d1541000868f17283008d1f75c0030"
-  dependencies:
-    colors "^1.3.3"
-    puppeteer "^1.14.0"
-    puppeteer-domkit "^1.0.0"
-    tslib "^1.9.3"
-    typescript "^3.0.0"
-
-puppeteer-domkit@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.2.tgz#57cbf41a4780ebe6fe0b6ed5f76fb928f31e9ccd"
-  dependencies:
-    colors "^1.3.3"
-    puppeteer "^1.14.0"
-    puppeteer-domkit "^1.0.1"
-    tslib "^1.9.3"
-    typescript "^3.0.0"
-
-puppeteer-domkit@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.3.tgz#a1ef3d9e706b4aa3641a8cfe87e51f3351dafcbd"
-  dependencies:
-    colors "^1.3.3"
-    puppeteer "^1.14.0"
-    puppeteer-domkit "^1.0.2"
-    tslib "^1.9.3"
-    typescript "^3.0.0"
-
-puppeteer-domkit@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.4.tgz#51edc24854116e979f87397a192eb890e34cf28d"
-  dependencies:
-    colors "^1.3.3"
-    puppeteer "^1.14.0"
-    puppeteer-domkit "^1.0.3"
-    tslib "^1.9.3"
-    typescript "^3.0.0"
-
-puppeteer-domkit@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.5.tgz#952b39437587810c7e09cddf72b62b95e8cf170b"
-  dependencies:
-    colors "^1.3.3"
-    puppeteer "^1.14.0"
-    puppeteer-domkit "^1.0.4"
-    tslib "^1.9.3"
-    typescript "^3.0.0"
-
-puppeteer-domkit@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.6.tgz#d632be371564a833af39e2c1e8d8ba442962d8df"
-  dependencies:
-    colors "^1.3.3"
-    puppeteer "^1.14.0"
-    puppeteer-domkit "^1.0.5"
-    tslib "^1.9.3"
-    typescript "^3.0.0"
-
-puppeteer-domkit@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.0.7.tgz#ac4abda6065299ebf6b9a7eae03f08e63a31a80b"
-  dependencies:
-    colors "^1.3.3"
-    puppeteer "^1.14.0"
-    puppeteer-domkit "^1.0.6"
     tslib "^1.9.3"
     typescript "^3.0.0"
 
 puppeteer@^1.14.0:
   version "1.14.0"
-  resolved "https://registry.npmjs.org/puppeteer/-/puppeteer-1.14.0.tgz#828c1926b307200d5fc8289b99df4e13e962d339"
+  resolved "http://registry.npm.taobao.org/puppeteer/download/puppeteer-1.14.0.tgz#828c1926b307200d5fc8289b99df4e13e962d339"
   dependencies:
     debug "^4.1.0"
     extract-zip "^1.6.6"
@@ -444,7 +369,7 @@ puppeteer@^1.14.0:
 
 readable-stream@^2.2.2:
   version "2.3.6"
-  resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
+  resolved "http://registry.npm.taobao.org/readable-stream/download/readable-stream-2.3.6.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Freadable-stream%2Fdownload%2Freadable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
   dependencies:
     core-util-is "~1.0.0"
     inherits "~2.0.3"
@@ -456,13 +381,13 @@ readable-stream@^2.2.2:
 
 rimraf@^2.6.1:
   version "2.6.3"
-  resolved "https://registry.npmjs.org/rimraf/-/rimraf-2.6.3.tgz#b2d104fe0d8fb27cf9e0a1cda8262dd3833c6cab"
+  resolved "http://registry.npm.taobao.org/rimraf/download/rimraf-2.6.3.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Frimraf%2Fdownload%2Frimraf-2.6.3.tgz#b2d104fe0d8fb27cf9e0a1cda8262dd3833c6cab"
   dependencies:
     glob "^7.1.3"
 
 safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
-  resolved "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
+  resolved "http://registry.npm.taobao.org/safe-buffer/download/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
 
 source-map-support@^0.5.6:
   version "0.5.11"
@@ -477,7 +402,7 @@ source-map@^0.6.0:
 
 string_decoder@~1.1.1:
   version "1.1.1"
-  resolved "https://registry.npmjs.org/string_decoder/-/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
+  resolved "http://registry.npm.taobao.org/string_decoder/download/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
   dependencies:
     safe-buffer "~5.1.0"
 
@@ -542,7 +467,7 @@ type-detect@^4.0.0, type-detect@^4.0.5:
 
 typedarray@^0.0.6:
   version "0.0.6"
-  resolved "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+  resolved "http://registry.npm.taobao.org/typedarray/download/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
 typescript@^3.0.0:
   version "3.3.4000"
@@ -554,7 +479,7 @@ universalify@^0.1.0:
 
 util-deprecate@~1.0.1:
   version "1.0.2"
-  resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
+  resolved "http://registry.npm.taobao.org/util-deprecate/download/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
 
 wrappy@1:
   version "1.0.2"
@@ -562,13 +487,13 @@ wrappy@1:
 
 ws@^6.1.0:
   version "6.2.1"
-  resolved "https://registry.npmjs.org/ws/-/ws-6.2.1.tgz#442fdf0a47ed64f59b6a5d8ff130f4748ed524fb"
+  resolved "http://registry.npm.taobao.org/ws/download/ws-6.2.1.tgz#442fdf0a47ed64f59b6a5d8ff130f4748ed524fb"
   dependencies:
     async-limiter "~1.0.0"
 
 yauzl@2.4.1:
   version "2.4.1"
-  resolved "https://registry.npmjs.org/yauzl/-/yauzl-2.4.1.tgz#9528f442dab1b2284e58b4379bb194e22e0c4005"
+  resolved "http://registry.npm.taobao.org/yauzl/download/yauzl-2.4.1.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fyauzl%2Fdownload%2Fyauzl-2.4.1.tgz#9528f442dab1b2284e58b4379bb194e22e0c4005"
   dependencies:
     fd-slicer "~1.0.1"
 

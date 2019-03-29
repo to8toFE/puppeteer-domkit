@@ -1,7 +1,7 @@
-import $ from '@/index'
+import $ from 'puppeteer-domkit';
 
 export default () => {
-    it(`target(...)`, async () => {
-        await $.expect.target('blank', true)
-    })
-}
+	it(`target(...)`, async () => {
+		await $.expect.target('blank', true);
+	});
+};
