@@ -100,8 +100,15 @@ Domkit.setCurrentPage = async (p) => {
     page = Domkit.page = p
 }
 
+/* to dev
+*/
+
 Domkit.findTarget = findTarget
 Domkit.closeTarget = closeTarget
+
+Domkit.blur = async ()=>{
+    await blur()
+}
 
 const waitFors = {}
 
@@ -294,7 +301,7 @@ class $Selector {
         await input(this.domSelector, content, autoBlur)
         return this
     }
-
+    /* to dev
     async type() {}
     async mouse() {}
     async hover() {}
@@ -302,6 +309,7 @@ class $Selector {
     async press() {}
     async screenshot() {}
     async uploadFile() {}
+    */
 }
 
 // 选择器

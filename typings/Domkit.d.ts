@@ -1,5 +1,5 @@
 import { $Selector } from './$Selector'
-import { Page, Browser } from 'puppeteer'
+import { Page, Browser, Target } from 'puppeteer'
 
 export interface Domkit {
     (selector: string): $Selector
@@ -8,6 +8,10 @@ export interface Domkit {
 
     waitFor: $WaitFor
     expect: $Expect
+
+    findTarget(targetUrlSubstr: string): Promise<Target>
+    closeTarget(targetUrlSubstr: string): Promise<Target>
+    blur(): Promise<void>
 
     page: Page
     browser: Browser
