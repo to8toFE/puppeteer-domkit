@@ -41,7 +41,7 @@ declare interface constants {
 
 
 interface WaitForOptions {
-    timeout: number
-    delay: number
+    timeout?: number
+    delay?: number
 }
 

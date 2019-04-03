@@ -31,6 +31,7 @@ export declare class $Selector {
 
     visible(): Promise<boolean>
     exist(): Promise<boolean>
+    length(): Promise<number>
 
     css(name: string ): Promise<string>
     attr(attrname: string): Promise<any>
@@ -65,6 +66,7 @@ interface DomWaitFor {
 
     visible(value: boolean, options?: WaitForOptions): Promise<void>
     exist(value: boolean, options?: WaitForOptions): Promise<void>
+    length(value: number, options?: WaitForOptions):Promise<void>
 
     scrollTop(value: number | Symbol, options?: WaitForOptions): Promise<void>
 
@@ -90,6 +92,7 @@ interface DomExpect {
 
     visible(value: boolean): Promise<void>
     exist(value: boolean): Promise<void>
+    length(value: number): Promise<void>
 
     scrollTop(value: number | Symbol): Promise<void>
 
@@ -103,11 +106,11 @@ interface DomExpect {
 }
 
 interface clickForOptions {
-    timeout: number
-    timespan: number
-    delay: number
-    x: number
-    y: number
+    timeout?: number
+    timespan?: number
+    delay?: number
+    x?: number
+    y?: number
 }
 
 export declare interface PlainObject {
@@ -115,8 +118,8 @@ export declare interface PlainObject {
 }
 
 export declare interface WaitForOptions {
-    timeout: number
-    delay: number
+    timeout?: number
+    delay?: number
 }
 
 export default $Selector

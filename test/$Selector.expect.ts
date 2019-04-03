@@ -13,7 +13,8 @@ const props0 = [
 	'index',
 	'scrollTop',
 	'visible',
-	'exist'
+	'exist',
+	'length'
 ];
 // // 有参数
 const props1 = {

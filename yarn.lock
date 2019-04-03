@@ -354,6 +354,26 @@ puppeteer-domkit@^1.0.14:
     tslib "^1.9.3"
     typescript "^3.0.0"
 
+puppeteer-domkit@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.1.0.tgz#e766d10592a524e253efbb355dcfb8fe5945bfbc"
+  dependencies:
+    colors "^1.3.3"
+    puppeteer "^1.14.0"
+    puppeteer-domkit "^1.0.14"
+    tslib "^1.9.3"
+    typescript "^3.0.0"
+
+puppeteer-domkit@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/puppeteer-domkit/-/puppeteer-domkit-1.1.2.tgz#cdd9041edf07b5948b55b2da6154ca66b612c7a1"
+  dependencies:
+    colors "^1.3.3"
+    puppeteer "^1.14.0"
+    puppeteer-domkit "^1.1.0"
+    tslib "^1.9.3"
+    typescript "^3.0.0"
+
 puppeteer@^1.14.0:
   version "1.14.0"
   resolved "http://registry.npm.taobao.org/puppeteer/download/puppeteer-1.14.0.tgz#828c1926b307200d5fc8289b99df4e13e962d339"

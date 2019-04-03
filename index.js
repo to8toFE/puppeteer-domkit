@@ -227,6 +227,18 @@ class $Selector {
             )
         }
 
+        waitFors.length = async (value, options) => {
+            await waitFor(
+                async () => {
+                    return equat(await this.length(), value)
+                },
+                options,
+                `waiting for ${converToString(
+                    this.selectors
+                )}.length() to be '${value.toString()}' but timeout (#)`
+            )
+        }
+
         props0.forEach((item) => {
             expects[item] = async (value) => {
                 if (!equat(await Domkit(this.selectors)[item](), value)) {
@@ -256,7 +268,7 @@ class $Selector {
                 throw new ExpectError(
                     `expect ${converToString(
                         this.selectors
-                    )}.visible(${name}) to be '${value.toString()}' but false`
+                    )}.visible() to be '${value.toString()}' but false`
                 )
             }
         }
@@ -266,7 +278,17 @@ class $Selector {
                 throw new ExpectError(
                     `expect ${converToString(
                         this.selectors
-                    )}.exist(${name}) to be '${value.toString()}' but false`
+                    )}.exist() to be '${value.toString()}' but false`
+                )
+            }
+        }
+
+        expects.length = async (value) => {
+            if (!equat(await this.length(), value)) {
+                throw new ExpectError(
+                    `expect ${converToString(
+                        this.selectors
+                    )}.length() to be '${value.toString()}' but false`
                 )
             }
         }
@@ -368,6 +390,16 @@ $Selector.prototype.exist = async function() {
         'body',
         (el, selectors) => {
             return !!$Z.$select(selectors).length
+        },
+        this.selectors
+    )
+}
+
+$Selector.prototype.length = async function() {
+    return await page.$eval(
+        'body',
+        (el, selectors) => {
+            return $Z.$select(selectors).length
         },
         this.selectors
     )
