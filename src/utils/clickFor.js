@@ -25,7 +25,7 @@ module.exports = async (selector, opts = {}) => {
         {
             timeout: 10000,
             timespan: 1000,
-            delay: 0,
+            delay: 0, // TODO:不同等待目标需要设置不同默认值
             x: 10,
             y: 10
         },
