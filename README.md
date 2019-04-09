@@ -4,11 +4,9 @@
 
 
 ## Why
-------
 I got tired of writing so many callbacks for DOM operations with api of puppeteer.
 
 ## Installation
-----
 ```javascript
 npm install puppeteer-domkit --save-dev
 ```
@@ -17,7 +15,6 @@ npm install puppeteer-domkit --save-dev
 
 
 ## Usage
-------
 ```javascript
 import puppeteer from 'puppeteer'
 import $ from 'puppeteer-domkit'
@@ -52,9 +49,9 @@ What's different from `zepto.js` is that, `puppeteer-domkit` only supports getti
 
 ```javascript
 const body: VSelector = $('body')
-const header: VSelector = vselector.find('header')
-const li1: VSelector = anotherSelector.find('li').eq(1)
-const li2: VSelector = anotherSelector.find('li:eq(2)')
+const header: VSelector = body.find('header')
+const li1: VSelector = header.find('li').eq(1)
+const ul: VSelector = li1.parents('ul:visible')
 ```
 
 The instance of VSelector do nothing with document
@@ -67,29 +64,23 @@ The instance of VSelector do nothing with document
 
 #### `VSelector.waitFor.X(name?, expectedValue?, options?:{timeout: 1000, delay: 100}):Promise<void>`
 
-By default, it check the value to be the expected value every 100ms, it would throw `TimeoutError` if cannot get the expected value in 1000ms
+By default, it checks to be the expected value every 100ms and it would throw `TimeoutError` if failed to get the expected value after 1000ms
 
 ```javascript
-
-    await $('div.loading').waitFor.hasClass('hidden')
-
-    await $('div.dialog').waitFor.css('display', 'block', {
-        timeout: 3000,
-        delay: 1000
-    })
-
+await $('div.loading').waitFor.hasClass('hidden')
+await $('div.dialog').waitFor.css('display', 'block', {
+    timeout: 3000,
+    delay: 1000
+})
 ```
 
 #### `VSelector.expect.X(name?, expectValue?):Promise<void>`
 
-It checks the value immediately, and throw `ExpectError` if cannot get the expected value
+It checks the value immediately, and throw `ExpectError` if failed to get the expected value
 
 ```javascript
-
-    await $('div.loading').expect.hasClass('hidden')
-
-    await $('div.dialog').expect.css('display', 'block')
-
+await $('div.loading').expect.hasClass('hidden')
+await $('div.dialog').expect.css('display', 'block')
 ```
 
 
@@ -111,14 +102,12 @@ It checks the value immediately, and throw `ExpectError` if cannot get the expec
 
 `browser: Browser` // current browser object
 
-### Some Constants 
+### Constants 
 
 `UNDEFINED`, `NULL`, `EMPTY`, `NOT_EMPTY`
 
 ```javascript
-
 await $('div.dialog').waitFor.attr('id', $.constants.NOT_EMPTY)
-    
 ```
 
 > 

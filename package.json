@@ -1,6 +1,6 @@
 {
 	"name": "puppeteer-domkit",
-	"version": "1.1.13",
+	"version": "1.1.16",
 	"description": "A toolkit for dom operation with puppeteer in nodejs environment, make you write less and do more, which also improve Test Case Development Efficiency",
 	"main": "src/index.js",
 	"scripts": {
@@ -15,8 +15,8 @@
 		"dom",
 		"domkit",
 		"toolkit",
-		"jquery",
-		"zepto"
+		"zepto",
+		"test"
     ],
     "repository": {
         "type": "git",
