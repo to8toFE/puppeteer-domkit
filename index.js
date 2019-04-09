@@ -50,7 +50,7 @@ function Domkit(selector) {
     if (!selector) {
         throw new Error('[$Z] selector is required')
     }
-    return new $Selector(selector)
+    return new VSelector(selector)
 }
 
 /**
@@ -64,24 +64,19 @@ Domkit.constants = constants
 Domkit.setBrowser = async (b) => {
     browser = Domkit.browser = b
 
-    Domkit.setCurrentPage((await browser.pages())[0])
+    await Domkit.setCurrentPage((await browser.pages())[0])
 
-    initPage()
+    await initPage()
 
     browser.on('targetcreated', (target) => {
         ;(async () => {
-            console.log('targetcreated')
-            initPage(await target.page())
+            await initPage(await target.page())
         })()
     })
 }
 
-function initPage(p) {
-    ;(p ? p : page).on('load', (response) => {
-        page.addScriptTag({
-            path: path.join(__dirname, './browser/$Z.js')
-        })
-    })
+ function initPage(p) {
+     // TODO: 可能会比较慢，导致 $Z undifined，需要一个机制去告知用例执行时机
     ;(p ? p : page).on('console', (msg) => {
         const jsh = msg.args()
         for (let x of jsh) {
@@ -91,6 +86,20 @@ function initPage(p) {
             }
         }
     })
+    return new Promise((r, rj)=>{
+        ;(p ? p : page).on('load', async (response) => {
+            await page.addScriptTag({
+                path: path.join(__dirname, './browser/$Z.js')
+            });
+            r()
+        })
+    })
+}
+
+Domkit.reload = async (opts) => {
+    const res = await Domkit.page.reload(opts)
+    await page.waitForFunction('window.$Z');
+    return res
 }
 
 /**
@@ -110,6 +119,7 @@ Domkit.blur = async ()=>{
     await blur()
 }
 
+
 const waitFors = {}
 
 waitFors.target = async (targetUrlSubstr, options) => {
@@ -122,6 +132,7 @@ waitFors.target = async (targetUrlSubstr, options) => {
     )
 }
 
+// TODO: 需要加上精准的抛错提示
 waitFors.response = async (urlSubstr, options) => {
     await page.waitForResponse(
         (response) =>
@@ -162,7 +173,7 @@ defineFreezedProps(Domkit, { waitFor: waitFors, expect: expects })
 
 Object.freeze(Domkit.waitFor)
 
-class $Selector {
+class VSelector {
     constructor(selector) {
         if (selector instanceof Array) {
             this.selectors = JSON.parse(JSON.stringify(selector))
@@ -301,25 +312,33 @@ class $Selector {
      * @param {*} opts
      */
     async click(opts) {
-        this.domSelector = await converToDomSelector(this.selectors)
+        this.domSelector = await converToDomSelector(assignSelectors(this.selectors, [
+            { type: 'eq', params: [0] }
+        ]))
         await clickFor(this.domSelector, opts)
         return this
     }
 
     async blur() {
-        this.domSelector = await converToDomSelector(this.selectors)
+        this.domSelector = await converToDomSelector(assignSelectors(this.selectors, [
+            { type: 'eq', params: [0] }
+        ]))
         await blur(this.domSelector)
         return this
     }
 
     async focus() {
-        this.domSelector = await converToDomSelector(this.selectors)
+        this.domSelector = await converToDomSelector(assignSelectors(this.selectors, [
+            { type: 'eq', params: [0] }
+        ]))
         await page.focus(this.domSelector)
         return this
     }
 
     async input(content, autoBlur) {
-        this.domSelector = await converToDomSelector(this.selectors)
+        this.domSelector = await converToDomSelector(assignSelectors(this.selectors, [
+            { type: 'eq', params: [0] }
+        ]))
         await input(this.domSelector, content, autoBlur)
         return this
     }
@@ -336,8 +355,8 @@ class $Selector {
 
 // 选择器
 selectors.forEach((item) => {
-    $Selector.prototype[item] = function() {
-        return new $Selector(
+    VSelector.prototype[item] = function() {
+        return new VSelector(
             assignSelectors(this.selectors, [
                 { type: item, params: Array.prototype.slice.call(arguments) }
             ])
@@ -347,7 +366,7 @@ selectors.forEach((item) => {
 
 // 无参数
 props0.forEach((it) => {
-    $Selector.prototype[it] = async function() {
+    VSelector.prototype[it] = async function() {
         return await page.$eval(
             'body',
             (el, selectors, method) => {
@@ -361,7 +380,7 @@ props0.forEach((it) => {
 
 // 一个参数
 props1.forEach((it) => {
-    $Selector.prototype[it] = async function(param) {
+    VSelector.prototype[it] = async function(param) {
         return await page.$eval(
             'body',
             (el, selectors, param, method) => {
@@ -374,7 +393,7 @@ props1.forEach((it) => {
     }
 })
 
-$Selector.prototype.visible = async function() {
+VSelector.prototype.visible = async function() {
     return await page.$eval(
         'body',
         (el, selectors) => {
@@ -385,7 +404,7 @@ $Selector.prototype.visible = async function() {
     )
 }
 
-$Selector.prototype.exist = async function() {
+VSelector.prototype.exist = async function() {
     return await page.$eval(
         'body',
         (el, selectors) => {
@@ -395,7 +414,7 @@ $Selector.prototype.exist = async function() {
     )
 }
 
-$Selector.prototype.length = async function() {
+VSelector.prototype.length = async function() {
     return await page.$eval(
         'body',
         (el, selectors) => {
@@ -408,18 +427,18 @@ $Selector.prototype.length = async function() {
 module.exports = Domkit
 
 function assignSelectors() {
-    const $selector = []
+    const vselector = []
 
     Array.prototype.slice.call(arguments).forEach((item) => {
         item &&
             item.forEach((itt) => {
-                $selector.push({
+                vselector.push({
                     type: itt.type,
                     params: itt.params
                 })
             })
     })
-    return $selector
+    return vselector
 }
 
 function defineFreezedProps(context, obj) {

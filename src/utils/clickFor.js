@@ -37,7 +37,7 @@ module.exports = async (selector, opts = {}) => {
     async function clck() {
         const el = await page.$(selector)
         // 聚焦被点击元素，否则界面视图位置可能不正确，导致各种问题
-        el.focus()
+        await el.focus()
         const box = await el.boundingBox()
 
         if (!el || !box) {

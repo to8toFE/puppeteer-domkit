@@ -1,6 +1,6 @@
 {
 	"name": "puppeteer-domkit",
-	"version": "1.1.2",
+	"version": "1.1.13",
 	"description": "A toolkit for dom operation with puppeteer in nodejs environment, make you write less and do more, which also improve Test Case Development Efficiency",
 	"main": "src/index.js",
 	"scripts": {
@@ -8,7 +8,21 @@
 		"test-dev": "mocha -r register.js test/index.ts --watch --watch-extensions ts,json --recursive --inspect --full-trace --bail --debug --async-only --timeout 10000"
 	},
 	"author": "stevenjc",
-	"license": "ISC",
+    "homepage": "https://github.com/to8toFE/puppeteer-domkit",
+    "bugs": "https://github.com/to8toFE/puppeteer-domkit/issues",
+    "keywords": [
+        "puppeteer",
+		"dom",
+		"domkit",
+		"toolkit",
+		"jquery",
+		"zepto"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/to8toFE/puppeteer-domkit.git"
+    },
+    "license": "MIT",
 	"typings": "typings/index.d.ts",
 	"dependencies": {
 		"colors": "^1.3.3",

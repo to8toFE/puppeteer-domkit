@@ -1,13 +1,15 @@
-import { $Selector } from './$Selector'
-import { Page, Browser, Target } from 'puppeteer'
+import { VSelector } from './VSelector'
+import { Page, Browser, Target, NavigationOptions ,Response} from 'puppeteer'
 
 export interface Domkit {
-    (selector: string): $Selector
+    (selector: string): VSelector
 
     constants: constants
 
     waitFor: $WaitFor
     expect: $Expect
+
+    reload(options?: NavigationOptions): Promise<Response>
 
     findTarget(targetUrlSubstr: string): Promise<Target>
     closeTarget(targetUrlSubstr: string): Promise<Target>

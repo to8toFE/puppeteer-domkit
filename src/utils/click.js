@@ -14,7 +14,7 @@ module.exports = async (selector, opts = {}) => {
     await clck()
     async function clck() {
         const el = await page.$(selector)
-        el.focus()
+        await  el.focus()
         const box = await el.boundingBox()
 
         if (!el || !box) {

@@ -1,4 +1,4 @@
-export declare class $Selector {
+export declare class VSelector {
     waitFor: DomWaitFor
     expect: DomExpect
     input(content: string): Promise<void>
@@ -40,19 +40,19 @@ export declare class $Selector {
     is(selector: string): Promise<boolean>
     hasClass(name: string): Promise<boolean>
 
-    has(selector?: string): $Selector
-    not(selector?: string): $Selector
-    parents(selector?: string): $Selector
-    parent(selector?: string): $Selector
-    children(selector?: string): $Selector
-    siblings(selector?: string): $Selector
-    prev(selector?: string): $Selector
-    next(selector?: string): $Selector
-    find(selector: string): $Selector
-    eq(index: number): $Selector
+    has(selector?: string): VSelector
+    not(selector?: string): VSelector
+    parents(selector?: string): VSelector
+    parent(selector?: string): VSelector
+    children(selector?: string): VSelector
+    siblings(selector?: string): VSelector
+    prev(selector?: string): VSelector
+    next(selector?: string): VSelector
+    find(selector: string): VSelector
+    eq(index: number): VSelector
 
-    first(): $Selector
-    last(): $Selector
+    first(): VSelector
+    last(): VSelector
 }
 
 // offsetLeft offsetTop
@@ -122,4 +122,4 @@ export declare interface WaitForOptions {
     delay?: number
 }
 
-export default $Selector
+export default VSelector
