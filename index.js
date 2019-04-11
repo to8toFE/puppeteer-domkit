@@ -1,12 +1,9 @@
 const path = require('path')
 
-const click = require('./src/utils/click')
 const clickFor = require('./src/utils/clickFor')
 const blur = require('./src/utils/blur')
 const input = require('./src/utils/input')
 
-const exist = require('./src/utils/exist')
-const visible = require('./src/utils/visible')
 
 const findTarget = require('./src/utils/findTarget')
 const closeTarget = require('./src/utils/closeTarget')

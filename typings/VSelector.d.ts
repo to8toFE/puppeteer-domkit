@@ -1,10 +1,9 @@
 export declare class VSelector {
     waitFor: DomWaitFor
     expect: DomExpect
-    input(content: string): Promise<void>
+    input(content: string, autoBlur: boolean): Promise<void>
     type(content: string): Promise<void>
-    click(options?: PlainObject): Promise<void>
-    clickFor(options?: clickForOptions): Promise<void>
+    click(options?: clickForOptions): Promise<void>
     focus(): Promise<void>
     blur(): Promise<void>
 
