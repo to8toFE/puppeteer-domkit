@@ -302,6 +302,33 @@ class VSelector {
 		await input(this.domSelector, content, autoBlur);
 		return this;
 	}
+
+	async length() {
+		return await page.evaluate((selectors) => {
+			return $Z.$select(selectors).length;
+		}, this.selectors);
+	}
+
+	async visible() {
+		return await page.$eval(
+			'body',
+			(el, selectors) => {
+				const elem = $Z.$select(selectors)[0];
+				return elem && !!(elem.offsetHeight || elem.offsetTop);
+			},
+			this.selectors
+		);
+	}
+
+	async exist() {
+		return await page.$eval(
+			'body',
+			(el, selectors) => {
+				return !!$Z.$select(selectors).length;
+			},
+			this.selectors
+		);
+	}
 	/* to dev
     async type() {}
     async mouse() {}
@@ -351,38 +378,18 @@ props1.forEach((it) => {
 	};
 });
 
-VSelector.prototype.visible = async function() {
-	return await page.$eval(
-		'body',
-		(el, selectors) => {
-			const elem = $Z.$select(selectors)[0];
-			return elem && !!(elem.offsetHeight || elem.offsetTop);
-		},
-		this.selectors
-	);
-};
-
-VSelector.prototype.exist = async function() {
-	return await page.$eval(
-		'body',
-		(el, selectors) => {
-			return !!$Z.$select(selectors).length;
-		},
-		this.selectors
-	);
-};
-
-VSelector.prototype.length = async function() {
-	return await page.$eval(
-		'body',
-		(el, selectors) => {
-			return $Z.$select(selectors).length;
-		},
-		this.selectors
-	);
-};
-
 module.exports = Domkit;
+
+module.exports.__for_recorder__ = {
+	props0,
+	props1,
+	subSelectors: selectors,
+	triggers: [ 'input', 'click', 'focus', 'blur' ],
+	$: Object.keys(Domkit),
+	$waitFor: Object.keys(waitFors),
+	$expect: Object.keys(expects),
+	VSelectorProto: Object.keys(VSelector.prototype)
+};
 
 function assignSelectors() {
 	const vselector = [];
