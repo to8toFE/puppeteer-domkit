@@ -1,7 +1,7 @@
 export declare class VSelector {
     waitFor: DomWaitFor
     expect: DomExpect
-    input(content: string, autoBlur: boolean): Promise<void>
+    input(content: string, autoBlur?: boolean): Promise<void>
     type(content: string): Promise<void>
     click(options?: clickForOptions): Promise<void>
     focus(): Promise<void>
@@ -32,7 +32,7 @@ export declare class VSelector {
     exist(): Promise<boolean>
     length(): Promise<number>
 
-    css(name: string ): Promise<string>
+    css(name: string): Promise<string>
     attr(attrname: string): Promise<any>
     prop(name: string): Promise<any>
     data(name: string): Promise<any>
@@ -65,14 +65,30 @@ interface DomWaitFor {
 
     visible(value: boolean, options?: WaitForOptions): Promise<void>
     exist(value: boolean, options?: WaitForOptions): Promise<void>
-    length(value: number, options?: WaitForOptions):Promise<void>
+    length(value: number, options?: WaitForOptions): Promise<void>
 
     scrollTop(value: number | Symbol, options?: WaitForOptions): Promise<void>
 
-    css(name: string | Symbol, value: string, options?: WaitForOptions): Promise<void>
-    attr(name: string | Symbol, value: string, options?: WaitForOptions): Promise<void>
-    prop(name: string | Symbol, value: string, options?: WaitForOptions): Promise<void>
-    data(name: string | Symbol, value: string, options?: WaitForOptions): Promise<void>
+    css(
+        name: string | Symbol,
+        value: string,
+        options?: WaitForOptions
+    ): Promise<void>
+    attr(
+        name: string | Symbol,
+        value: string,
+        options?: WaitForOptions
+    ): Promise<void>
+    prop(
+        name: string | Symbol,
+        value: string,
+        options?: WaitForOptions
+    ): Promise<void>
+    data(
+        name: string | Symbol,
+        value: string,
+        options?: WaitForOptions
+    ): Promise<void>
     is(
         selector: string,
         value: boolean,
@@ -110,6 +126,12 @@ interface clickForOptions {
     delay?: number
     x?: number
     y?: number
+    until?: Function
+    forShow?: string
+    forHidden?: string
+    forDispose?: string
+    forTarget?: string
+    closeTarget?: boolean
 }
 
 export declare interface PlainObject {

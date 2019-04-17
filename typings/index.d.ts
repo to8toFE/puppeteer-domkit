@@ -1,5 +1,5 @@
-import { Domkit } from './Domkit';
- 
-declare var $: Domkit;
+import { Domkit } from './Domkit'
 
-export default $;
+declare var $: Domkit
+
+export default $

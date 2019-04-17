@@ -1,6 +1,4 @@
-const visible = require('./visible')
-const exist = require('./exist')
-const findTarget = require('./findTarget')
+const utils = require('../utils')
 
 const fors = ['until', 'forShow', 'forHidden', 'forDispose', 'forTarget']
 
@@ -20,7 +18,7 @@ const fors = ['until', 'forShow', 'forHidden', 'forDispose', 'forTarget']
  *  closeTarget: true
  * }
  */
-module.exports = async (selector, opts = {}) => {
+module.exports = async function(selector, opts = {}) {
     opts = Object.assign(
         {
             timeout: 10000,
@@ -60,27 +58,27 @@ module.exports = async (selector, opts = {}) => {
                         await clck()
                     }
                 } else if (opts.forShow) {
-                    if (!(await visible(opts.forShow))) {
+                    if (!(await utils.visible(opts.forShow))) {
                         await page.waitFor(opts.timespan)
                         await clck()
                     }
                 } else if (opts.forHidden) {
-                    if (await visible(opts.forHidden)) {
+                    if (await utils.visible(opts.forHidden)) {
                         await page.waitFor(opts.timespan)
                         await clck()
                     }
                 } else if (opts.forDispose) {
-                    if (await exist(opts.forDispose)) {
+                    if (await utils.exist(opts.forDispose)) {
                         await page.waitFor(opts.timespan)
                         await clck()
                     }
                 } else if (opts.forExist) {
-                    if (!(await exist(opts.forExist))) {
+                    if (!(await utils.exist(opts.forExist))) {
                         await page.waitFor(opts.timespan)
                         await clck()
                     }
                 } else if (opts.forTarget) {
-                    const target = await findTarget(opts.forTarget)
+                    const target = await utils.findTarget(opts.forTarget)
                     if (!target) {
                         await page.waitFor(opts.timespan)
                         await clck()
