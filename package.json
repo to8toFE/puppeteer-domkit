@@ -1,6 +1,6 @@
 {
 	"name": "puppeteer-domkit",
-	"version": "1.1.20",
+	"version": "1.2.0",
 	"description": "A toolkit for DOM operation with puppeteer in nodejs environment, which greatly improves test case development efficiency",
 	"main": "src/index.js",
 	"scripts": {

@@ -14,7 +14,7 @@ import $SelectorWaitFor from './$Selector.waitFor';
 describe('puppeteer-domkit', () => {
 	before(async () => {
 		let browser = await puppeteer.launch({
-			headless: false
+			headless: true
 			//devtools: true
 		});
 
