@@ -3,17 +3,19 @@
 ### A toolkit for DOM operation with puppeteer in nodejs environment, which greatly improves test case development efficiency
 
 ## Why
+
 I got tired of writing so many callbacks for DOM operations with puppeteer api.
 
 ## Installation
+
 ```javascript
 npm install puppeteer-domkit --save-dev
 ```
 
-> This project already contains typings files
-
+> This project already contains typings files, just enjoy programing with TypeScript
 
 ## Usage
+
 ```javascript
 import puppeteer from 'puppeteer'
 import $ from 'puppeteer-domkit'
@@ -34,19 +36,19 @@ import $ from 'puppeteer-domkit'
 })();
 ```
 
-> Except some event trigger and some methods, most of DOM api are based on zeptojs, which would be injected when page on load. 
+> Except some event trigger and some methods, most of DOM api are based on zeptojs, which would be injected when page on load.
 
 [zepto.js Doc](https://zeptojs.com/)
 
-What's different from `zepto.js` is that, `puppeteer-domkit` only supports getting data from dom but not setting data to dom or changing dom. 
+What's different from `zepto.js` is that, `puppeteer-domkit` only supports getting data from dom but not setting data to dom or changing dom.
 
 In chromium page, it was modified for `puppeteer-domkit` and exposes `$Z` namespace.
 
-## Methods return instance of VSelector 
+## Methods return instance of VSelector
 
 `has`, `not`, `parents`, `parent`, `children`, `siblings`, `prev`, `next`, `find`, `eq`, `first`, `last`
 
-> jQuery CSS extensions is supported, such as $('div:first') and el.is(':visible').
+> jQuery CSS extensions is supported, such as \$('div:first') and el.is(':visible').
 
 ```javascript
 const body: VSelector = $('body')
@@ -88,33 +90,33 @@ await $('div.dialog').expect.css('display', 'block')
 
 All event triggers are based on api of puppeteer and do some functional packaging
 
-### `VSelector.click(options?): Promise<void>` 
+### `VSelector.click(options?): Promise<void>`
 
 Enhanced click function, supports continuous click for some expected result.
 
 #### options
-````javascript
+
+```javascript
 {
     x: 10,   // click on element offset left
     y: 10,   // click on element offset top
 
     forShow?: string | forHidden?: string | forDispose?: string | forExist?: string | forTarget?: string | until?: () => true // checking options, selector or sub string of url or function
-    // should not be more than one of checking options 
-    
+    // should not be more than one of checking options
+
     // the below options could work, only if had one of above checking options
-    timeout: 10000, // timeout 
+    timeout: 10000, // timeout
     timespan: 1000, // time span between two click
     delay: 100,  // delay of checking expected result after click
     closeTarget: true  // work with forTarget, close target when the target is open
 }
-````
+```
 
-### `VSelector.input(content: string, autoBlur: boolean = true): Promise<void>` 
+### `VSelector.input(content: string, autoBlur: boolean = true): Promise<void>`
 
 1. clear the old value of element
 2. type the new value to the element
 3. blur the element by default
-
 
 ### `VSelector.type(content: string): Promise<void>`
 
@@ -123,9 +125,6 @@ VSelector.type == Puppeteer.Page.type
 ### `VSelector.focus(): Promise<void>`
 
 VSelector.focus == Puppeteer.Page.focus
-
-
-
 
 ### Some helpful tool methods
 
@@ -145,7 +144,7 @@ VSelector.focus == Puppeteer.Page.focus
 
 `browser: Browser` // current browser object
 
-### Constants 
+### Constants
 
 `UNDEFINED`, `NULL`, `EMPTY`, `NOT_EMPTY`
 
@@ -153,16 +152,18 @@ VSelector.focus == Puppeteer.Page.focus
 await $('div.dialog').waitFor.attr('id', $.constants.NOT_EMPTY)
 ```
 
+---
 
-----
-----
+---
+
 ## `puppeteer-domkit` is being revised and updated periodically
+
 ## Welcome to be a contributor to this project
-----
-----
 
+---
 
-License
--------
+---
+
+## License
 
 Licensed under MIT
