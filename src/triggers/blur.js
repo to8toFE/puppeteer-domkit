@@ -1,11 +1,15 @@
 /***
  *  让元素失去焦点
  * */
-module.exports = async () => {
-    await page.mouse.click(blurOffset.x, blurOffset.y)
-}
-const blurOffset = { x: 10, y: 10 }
-
-module.exports.offset = (offset) => {
-    Object.assign(blurOffset, offset)
+module.exports = async (selector, offsetY) => {
+    const el = await page.$(selector)
+    const box = await el.boundingBox()
+    if (!el || !box) {
+        if (!opts.forDispose && !opts.forHidden) {
+            throw '[puppeteer-testkit] element not visible or deleted fro document'
+        } else {
+            return
+        }
+    }
+    await page.mouse.click(box.x + box.width / 2, box.y - (offsetY || 1))
 }

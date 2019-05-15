@@ -14,6 +14,6 @@ module.exports = async (selector, content, autoBlur = true) => {
         await page.type(selector, content, { delay: 10 })
     }
     if (autoBlur) {
-        await blur()
+        await blur(selector)
     }
 }

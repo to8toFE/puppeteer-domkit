@@ -40,7 +40,7 @@ module.exports = async function(selector, opts = {}) {
 
         if (!el || !box) {
             if (!opts.forDispose && !opts.forHidden) {
-                throw 'element not visible or deleted fro document'
+                throw '[puppeteer-testkit] element not visible or deleted fro document'
             } else {
                 return
             }

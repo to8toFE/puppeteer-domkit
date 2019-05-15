@@ -1,5 +1,5 @@
 import { VSelector } from './VSelector'
-import { Page, Browser, Target, NavigationOptions ,Response} from 'puppeteer'
+import { Page, Browser, Target, NavigationOptions, Response } from 'puppeteer'
 
 export interface Domkit {
     (selector: string): VSelector
@@ -13,7 +13,6 @@ export interface Domkit {
 
     findTarget(targetUrlSubstr: string): Promise<Target>
     closeTarget(targetUrlSubstr: string): Promise<Target>
-    blur(): Promise<void>
 
     page: Page
     browser: Browser
@@ -41,9 +40,7 @@ declare interface constants {
     NOT_EMPTY: Symbol
 }
 
-
 interface WaitForOptions {
     timeout?: number
     delay?: number
 }
-

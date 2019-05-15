@@ -163,11 +163,11 @@ class VSelector {
         return this
     }
 
-    async blur() {
+    async blur(offsetY) {
         this.domSelector = await utils.converToDomSelector(
             utils.assignSelectors(this.selectors, [{ type: 'eq', params: [0] }])
         )
-        await blur(this.domSelector)
+        await blur(this.domSelector, offsetY)
         return this
     }
 

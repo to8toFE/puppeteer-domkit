@@ -1,6 +1,5 @@
 const path = require('path')
 const utils = require('./utils')
-const blur = require('./triggers/blur')
 const constants = require('./constants')
 const VSelector = require('./VSelector')
 
@@ -61,10 +60,6 @@ Domkit.setCurrentPage = async (p) => {
 
 Domkit.findTarget = utils.findTarget
 Domkit.closeTarget = utils.closeTarget
-
-Domkit.blur = async () => {
-    await blur()
-}
 
 const waitFors = {}
 

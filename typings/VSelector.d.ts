@@ -5,7 +5,7 @@ export declare class VSelector {
     type(content: string): Promise<void>
     click(options?: clickForOptions): Promise<void>
     focus(): Promise<void>
-    blur(): Promise<void>
+    blur(offsetY?: number): Promise<void>
 
     text(): Promise<string>
     html(): Promise<string>
