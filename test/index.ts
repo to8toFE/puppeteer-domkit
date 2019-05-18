@@ -13,11 +13,11 @@ import $SelectorWaitFor from './$Selector.waitFor'
 const $: Domkit = require('../index')
 
 describe('puppeteer-domkit', () => {
-	before(async () => {
-		let browser = await puppeteer.launch({
-			headless: true
-			//devtools: true
-		});
+    before(async () => {
+        let browser = await puppeteer.launch({
+            //headless: true
+            //devtools: true
+        })
 
         let page = (await browser.pages())[0]
 
@@ -27,6 +27,10 @@ describe('puppeteer-domkit', () => {
             width: 1366,
             height: 768
         })
+
+        await page.goto(
+            'https://registry.npm.taobao.org/passkee?param=1#/hash?hashparam=3'
+        )
 
         await page.setContent(`<html><body><div id="for-ppt-test"
                                     attr="for-ppt-test"

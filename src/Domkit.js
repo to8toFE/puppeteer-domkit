@@ -2,6 +2,9 @@ const path = require('path')
 const utils = require('./utils')
 const constants = require('./constants')
 const VSelector = require('./VSelector')
+const expects = require('./bom/expects')
+const waitFors = require('./bom/waitFors')
+const location = require('./bom/location')
 
 browser = null
 page = null
@@ -60,52 +63,7 @@ Domkit.setCurrentPage = async (p) => {
 
 Domkit.findTarget = utils.findTarget
 Domkit.closeTarget = utils.closeTarget
-
-const waitFors = {}
-
-waitFors.target = async (targetUrlSubstr, options) => {
-    await utils.waitFor(
-        async () => {
-            return !!(await utils.findTarget(targetUrlSubstr))
-        },
-        options,
-        `waiting for target: ${targetUrlSubstr} but timeout (#)`
-    )
-}
-
-// TODO: 需要加上精准的抛错提示
-waitFors.response = async (urlSubstr, options) => {
-    await page.waitForResponse(
-        (response) =>
-            response.url().indexOf(urlSubstr) > -1 && response.status() === 200
-    )
-}
-
-waitFors.fn = async (cb, options) => {
-    await utils.waitFor(
-        async () => {
-            return await cb()
-        },
-        options,
-        `waiting for callback return true but timeout (#)`
-    )
-}
-
-const expects = {}
-
-expects.target = async (targetUrlSubstr, opened) => {
-    const res = !!(await utils.findTarget(targetUrlSubstr))
-    if (
-        (typeof opened !== 'undefined' && res !== opened) ||
-        (typeof opened === 'undefined' && res)
-    ) {
-        throw new Error(
-            `expect target: ${targetUrlSubstr} ${
-                opened ? 'opened' : 'closed'
-            } but false`
-        )
-    }
-}
+Domkit.location = location
 
 utils.defineFreezedProps(Domkit, { waitFor: waitFors, expect: expects })
 

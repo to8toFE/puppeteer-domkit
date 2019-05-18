@@ -1,4 +1,6 @@
 const constants = require('../constants')
+const qs = require('qs')
+const url = require('url')
 
 class TimeoutError extends Error {
     constructor(message) {
@@ -15,17 +17,25 @@ class ExpectError extends Error {
 }
 
 module.exports = {
-    async findTarget(url) {
-        const targets = await browser.targets()
-        return targets.find((it) => (it.url() || '').indexOf(url) > -1)
-    },
-    async closeTarget(url) {
-        const target = await findTarget(url)
-        if (target) {
-            await (await target.page()).close()
+    parseUrl(uri) {
+        const urlObj = url.parse(uri)
+        if (urlObj.search) {
+            urlObj.search =
+                urlObj.search[0] === '?'
+                    ? urlObj.search.slice(1)
+                    : urlObj.search
+            urlObj.search = urlObj.search ? qs.parse(urlObj.search) : {}
         } else {
-            throw new Error(`canot find target:${url}`)
+            urlObj.search = {}
         }
+        if (urlObj.hash) {
+            const hash = urlObj.hash.split('?')
+            urlObj.hash = hash[0]
+            urlObj.hashSearch = hash[1] ? qs.parse(hash[1]) : {}
+        } else {
+            urlObj.hashSearch = {}
+        }
+        return urlObj
     },
     defineFreezedProps(context, obj) {
         for (const x in obj) {
@@ -38,6 +48,7 @@ module.exports = {
             }
         }
     },
+
     async converToDomSelector(selectors) {
         const marks = await page.$eval(
             'body',
